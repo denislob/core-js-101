@@ -212,16 +212,12 @@ function isPrime(n) {
   if (n <= 1) {
     return false;
   }
-  let div = 0;
   let i = 2;
-  while (div !== 2 || i < Math.sqrt(n)) {
+  while (n > i) {
     if (n % i === 0) {
-      div += 1;
+      return false;
     }
     i += 1;
-  }
-  if (div === 2) {
-    return false;
   }
   return true;
 }
